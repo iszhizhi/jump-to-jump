@@ -1,11 +1,15 @@
 import * as THREE from '../libs/three.js'
+window.THREE = THREE
 import '../libs/weapp-adapter'
-window.THREE=THREE
- class Main{
-  constructor(){}
-  init(){
-    console.log('main function')
+import game from './game/game.js'
+
+class Main {
+  constructor() {}
+
+  static init() {
+    game.init()
   }
+  
 }
 
-export default new Main()
+export default Main

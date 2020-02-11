@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "game",
-	"libVersion": "1.9.94",
+	"libVersion": "2.10.1",
 	"appid": "wx338da50181863a16",
 	"projectname": "jump",
 	"simulatorType": "wechat",
