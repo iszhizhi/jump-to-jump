@@ -1,5 +1,20 @@
-class Cuboid{
+import BaseBlock from './base.js'
 
-constructor(){}
+export default class Cuboid extends BaseBlock {
+
+  constructor(x, y, z, width) {
+    super('cuboid')
+    const size = width || this.width
+    const geometry = new THREE.BoxGeometry(size, this.height, size)
+    const material = new THREE.MeshBasicMaterial({
+      color: 0xfffff
+    })
+    this.instance = new THREE.Mesh(geometry, material)
+
+    this.instance.position.x = x
+    this.instance.position.y = y
+    this.instance.z = z
+
+  }
 
 }

@@ -1,6 +1,7 @@
-import 
-  scene
- from '../scene/scene.js'
+import scene from '../scene/scene.js'
+import Cuboid from '../block/cuboid.js'
+import Cylinder from '../block/cylinder.js'
+
 
 class GamePage {
 
@@ -11,6 +12,7 @@ class GamePage {
   init() {
     this.scene = scene
     this.scene.init()
+    this.addInitBlock()
     this.render()
     console.log('初始化开始界面')
   }
@@ -21,6 +23,15 @@ class GamePage {
 
   restart() {
     console.log('清楚状态')
+  }
+
+  // 添加block
+
+  addInitBlock() {
+const cuboid = new Cuboid(-15,0,0)
+const cylinder = new Cylinder(15,0,0)
+this.scene.instance.add(cuboid.instance)
+this.scene.instance.add(cylinder.instance)
   }
 
   // 渲染界面
