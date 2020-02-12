@@ -6,29 +6,31 @@ class Controller {
   constructor() {
     this.gameModel = gameModel
     this.gameView = gameView
+    this.gameModel.stageChanged.attach((sender, args) => {
+      const stageName = args.stage
+      switch (stageName) {
+        case 'game-over':
+          this.gameView.showGameOverPage()
+        case 'game':
+          this.gameView.showGamePage()
+        default:
+      }
+    })
   }
 
-  showGameOverPage = () => {
-    this.gameView.showGameOverPage()
-  }
-
-  restartGamePage = () => {
-    this.gamePage.restart()
-  }
 
   //初始化界面 统一管理初始和结束
   initPages() {
 
-    const gamePageCallbacks = {
-      showGameOverPage: this.showGameOverPage
+    const gamePageCallbacks = () => {
+      this.gameModel.setStage('game-over')
     }
 
-    const gameOverPageCallbacks = {
-      gameRestart: this.restartGamePage
+    const gameOverPageCallbacks = () => {
+      this.gameModel.setStage('game')
     }
-
-    this.gameView.initGamePage(gamePageCallbacks)
     this.gameView.initGameOverPage(gameOverPageCallbacks)
+    this.gameView.initGamePage(gamePageCallbacks)
   }
 
 }

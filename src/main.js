@@ -1,15 +1,15 @@
-import * as THREE from '../libs/three.js'
-window.THREE = THREE
-import '../libs/weapp-adapter'
-import game from './game/game.js'
+import * as THREE from "../libs/three.js";
+// @ts-ignore
+window.THREE = THREE;
+import "../libs/weapp-adapter";
+import game from "./game/game.js";
 
 class Main {
   constructor() {}
 
   static init() {
-    game.init()
+    game.init();
   }
-  
 }
 
-export default Main
+export default Main;

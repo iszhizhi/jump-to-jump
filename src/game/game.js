@@ -2,11 +2,11 @@ import gameController from './controller.js'
 class Game {
 
   constructor() {
-    this.gameController=gameController
+    this.gameController = gameController
   }
 
   init() {
-this.gameController.initPages()
+    this.gameController.initPages()
   }
 
 }

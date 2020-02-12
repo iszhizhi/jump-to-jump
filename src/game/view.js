@@ -7,10 +7,18 @@ class GameView {
 
   // 显示游戏结束
   showGameOverPage() {
+    this.gamePage
     this.gameOverPage.show()
   }
 
-  // 重新开始游戏
+  // 显示游戏开始
+  showGamePage() {
+    this.gameOverPage.hide()
+    this.gamePage.restart()
+    this.gamePage.show()
+  }
+
+  // 清除所有状态
   restartGamePage() {
     this.gamePage.restart()
   }
